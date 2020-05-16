@@ -1,0 +1,122 @@
+<html>
+<title>Kill the Enemies</title>
+<script src="js/three.min.js"></script>
+<!--<script src="js/control.js"></script>
+<script src="js/source1.js"></script>-->
+<style>
+	html, body {
+				width: 100%;
+				height: 100%;
+			}
+
+			body {
+				background-color: #ffffff;
+				margin: 0;
+				overflow: hidden;
+				font-family: arial;
+			}
+
+			#blocker {
+				display: none;
+				position: absolute;
+
+				width: 100%;
+				height: 100%;
+
+				background-color: rgba(0,0,0,0.5);
+			}
+
+			#loader {
+				position: absolute;
+
+				width: 100%;
+				height: 100%;
+
+				background-color: rgba(0,0,0,0.5);
+			}
+
+			#loader-wheel{
+				margin: 0;
+				padding: 0;
+  				position: absolute;
+				left: calc(50% - 76px);
+				top: calc(50% - 86px);
+				border: 16px solid #f3f3f3;
+				border-radius: 50%;
+				border-top: 16px solid #3498db;
+				width: 120px;
+				height: 120px;
+				-webkit-animation: spin 2s linear infinite; /* Safari */
+				animation: spin 2s linear infinite;
+			}
+			
+			#loader-msg{
+				color: #ffffff;
+				text-align: center;
+				font-size:40px;
+			}
+			/* Safari */
+			@-webkit-keyframes spin {
+				0% { -webkit-transform: rotate(0deg); }
+				100% { -webkit-transform: rotate(360deg); }
+			}
+
+			@keyframes spin {
+				0% { transform: rotate(0deg); }
+				100% { transform: rotate(360deg); }
+			}
+
+			#instructions {
+				width: 100%;
+				height: 100%;
+
+				display: -webkit-box;
+				display: -moz-box;
+				display: box;
+
+				-webkit-box-orient: horizontal;
+				-moz-box-orient: horizontal;
+				box-orient: horizontal;
+
+				-webkit-box-pack: center;
+				-moz-box-pack: center;
+				box-pack: center;
+
+				-webkit-box-align: center;
+				-moz-box-align: center;
+				box-align: center;
+
+				color: #ffffff;
+				text-align: center;
+
+				cursor: pointer;
+			}
+
+			#gameover{
+				margin-bottom: 200px;
+				width: 800px;
+				height: 90px;
+				padding: 20px;
+				font-size: 80px;
+				background-color: coral;
+				border:2px crimson solid;
+				border-radius: 10px;
+				opacity: 0;
+			}
+</style>
+<body>
+	<div id="loader">
+		<div id="loader-wheel"></div>
+		<div id="loader-msg">Loading...</div>
+	</div>
+    <div id="blocker">
+		<div id="instructions">
+			<span id="gameover">Game Over</span><br/><br/><br/><br/><br/>
+			<span style="font-size:40px">Click to play</span>
+			<br />
+			(W, A, S, D = Move, SPACE = Jump, MOUSE = Look around)
+		</div>
+	</div>
+	<script data-main="js/dist/main" src="js/require.js"></script>
+</body>
+</html>
